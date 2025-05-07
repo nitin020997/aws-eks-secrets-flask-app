@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: myeks-cluster
+  region: ap-south-1
+
+nodeGroups:
+  - name: dev-nodes
+    instanceType: t3.medium
+    desiredCapacity: 2
+    minSize: 1
+    maxSize: 3
+    ssh:
+      allow: true
+      publicKeyName: nitin-eks-key   # ✅ THIS is the line to update
